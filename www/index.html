@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <script src="components/loader.js"></script>
+  <script src="lib/onsenui/js/onsenui.min.js"></script>
+  <script src="components/ncmb/ncmb.min.js"></script>
+  <script src="components/monaca-jquery/jquery.js"></script>
+  <script src="components/monaca-jquery-mobile/jquery.mobile.js"></script>
+  <script src="js/web.js"></script>
+
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <script>
+    //NiftyCloud mobile backend初期化
+    var application_key = '637885d9361d0770dfd702b21c7c4793b1fb30e7693f479bba7f03b6f12ff0de';
+    var client_key = 'a9cd92ffe8c11a42e9a299711cdabdf94dd2bb05b11a596af63c1067d8d6bb40';
+    var ncmb = new NCMB(application_key,client_key);
+  
+    var sender_id = '684727850152';
+        
+        document.addEventListener("deviceready", function()
+            {
+                // デバイストークンを取得してinstallation登録が行われます
+                window.NCMB.monaca.setDeviceToken(application_key, client_key, sender_id);
+
+                // 開封通知登録の設定
+                // trueを設定すると、開封通知を行う
+                window.NCMB.monaca.setReceiptStatus(true);
+            },false);
+            
+    window.fn = {};
+    window.fn.open = function() {
+      var menu = document.getElementById('menu');
+      menu.open();
+    };
+    window.fn.load = function(page) {
+      var content = document.getElementById('content');
+      var menu = document.getElementById('menu');
+      content
+        .load(page)
+        .then(menu.close.bind(menu));
+    };
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    </script>
+</head>
+
+<!--以下からbody.現状ではナビドロのみ -->
+<body>
+  <ons-splitter>
+        <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+            <ons-page>
+                      
+                <!--リストです  -->
+                <ons-list>
+                  <ons-list-item onclick="fn.load('home.html')" tappable>
+                    Home
+                  </ons-list-item>
+                  <ons-list-item onclick="fn.load('theday.html')" tappable>
+                    当日
+                  </ons-list-item>
+                  <ons-list-item onclick="fn.load('kyogi.html')" tappable>
+                    競技
+                  </ons-list-item>
+                  <ons-list-item onclick="fn.load('unjitsu.html')" tappable>
+                    運実
+                  </ons-list-item>
+                  <ons-list-item onclick="fn.load('web.html')" tappable>
+                    Webページ
+                  </ons-list-item>
+                　<ons-list-item onclick="fn.load('contact.html')" tappable>
+                    Contact us
+                  </ons-list-item>
+                </ons-list>
+        
+            </ons-page>
+        </ons-splitter-side>
+
+    <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+  </ons-splitter>
+</body>
+
+</html>

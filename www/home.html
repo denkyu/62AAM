@@ -1,0 +1,51 @@
+<ons-page>
+    <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Home
+        </div>
+    </ons-toolbar>
+
+    <!-- 会場レイアウトの画像とテキスト --> 
+   <div style="position: absolute; top: 10px; left:20px;">
+        <img src="./img/layout.png" width="140" onclick="fn.load('./sub-pages/home-cnt/layout.html')">
+    </div>
+    <div style="position: absolute; top: 140px; left:20px;">
+        <p><font size="+1">会場レイアウト</font></p>
+    </div>
+    <div style="position: absolute; top: 170px; left:20px;">
+        <p><font size="-1"><span style="opacity: 0.6;">当日の会場内地図</font></span></p>
+    </div>
+    
+    <!-- 禁止事項の画像とテキスト -->
+    <div style="position: absolute; top: 10px; right:20px;">
+        <img src="./img/ban.png" width="140" onclick="fn.load('./sub-pages/home-cnt/ban.html')">
+    </div>
+        <div style="position: absolute; top: 140px; right:80px;">
+        <p><font size="+1">注意事項</font></p>
+    </div>
+    <div style="position: absolute; top: 170px; right:35px;">
+        <p><font size="-1"><span style="opacity: 0.6;">会場内での注意事項</font></span></p>
+    </div>
+    
+    <!-- タイムテーブルの画像とテキスト -->
+    <div style="position: absolute; top: 240px; left:20px;">
+        <img src="./img/timetable.png" width="140" onclick="fn.load('./sub-pages/home-cnt/timetable.html')">
+    </div>
+    <div style="position: absolute; top: 370px; left:20px;">
+        <p><font size="+1">タイムテーブル</font></p>
+    </div>
+    <div style="position: absolute; top: 400px; left:20px;">
+        <p><font size="-1"><span style="opacity: 0.6;">当日のタイムテーブル</font></span></p>
+    </div>
+    
+    <div style="position: absolute; bottom: 10px; left:20px;">
+        <br><font size="+1">第62回麻布学園運動会は、</font>
+        <br><font size="+1">10/4に私学事業団総合運動場にて開催</font>
+    </div>
+
+</ons-page>

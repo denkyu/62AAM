@@ -1,0 +1,55 @@
+<ons-page>
+    <script src="components/monaca-jquery/jquery.js"></script>
+    <script src="components/monaca-jquery-mobile/jquery.mobile.js"></script>
+    <ons-toolbar>
+        <div class="left">
+            <ons-toolbar-button onclick="fn.open()">
+                <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+        
+        <div class="center">
+          競技説明
+        </div>
+    </ons-toolbar>
+    
+    <!--ここから本番だよ！！！ -->
+    <div data-role="collapsible-set">
+        <div data-role="collapsible">
+            <h3>全学年競技</h3>
+            <a href="#" target="" title="" class="" onclick="fn.load('./sub-pages/kyogi-cnt/relay.html')">リレー</a>
+        </div>
+    </div>
+
+    <div data-role="collapsible-set">
+        <div data-role="collapsible">
+            <h3>中学生全体競技</h3>
+            <a href="#" target="" title="" class="" onclick="fn.load('./sub-pages/kyogi-cnt/bobo.html')">ぼーぼー</a>
+        </div>
+        <div data-role="collapsible">
+            <h3>中1競技</h3>
+            <a href="#" target="" title="" class="" onclick="fn.load('./sub-pages/kyogi-cnt/mizukiba.html')">水風船騎馬戦</a>
+        </div>
+        <div data-role="collapsible">
+            <h3>中2競技</h3>
+            <a href="#" target="" title="" class="" onclick="fn.load('./sub-pages/kyogi-cnt/shippo.html')">しっぽとり</a>
+        </div>
+        <div data-role="collapsible">
+            <h3>中3競技</h3>
+            <a href="#" target="" title="" class="" onclick="fn.load('./sub-pages/kyogi-cnt/tamatama.html')">たまたま</a>
+        </div>
+    </div>
+    
+    <div data-role="collapsible-set">
+        <div data-role="collapsible">
+            <h3>高1,高3競技</h3>
+            <a href="#" target="" title="" class="" onclick="fn.load('./sub-pages/kyogi-cnt/zankiba.html')">高1高3騎馬戦</a>
+        </div>
+        <div data-role="collapsible">
+            <h3>高2競技</h3>
+            <a href="#" target="" title="" class="" onclick="fn.load('./sub-pages/kyogi-cnt/taisho.html')">高2大将騎馬戦</a>
+        </div>
+    </div>
+    
+</body>
+</ons-page>
